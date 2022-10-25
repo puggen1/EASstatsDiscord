@@ -1,0 +1,29 @@
+{
+  "name": "easstatsdiscord",
+  "version": "0.0.1",
+  "description": "This package is used as an discord bot, to display informatit apex players",
+  "main": "script.js",
+  "scripts": {
+    "test": "node /test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puggen1/EASstatsDiscord.git"
+  },
+  "keywords": [
+    "apex",
+    "discord",
+    "stats",
+    "bot"
+  ],
+  "author": "Bendik Kvam bendik.kvam61@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/puggen1/EASstatsDiscord/issues"
+  },
+  "homepage": "https://github.com/puggen1/EASstatsDiscord#readme",
+  "dependencies": {
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3"
+  }
+}
