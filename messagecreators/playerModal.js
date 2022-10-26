@@ -8,7 +8,8 @@ function createModal(player) {
     .addFields(
       { name: "level", value: `${player.level}`, inline:true},
       { name: "percent to next level:", value: `${player.leverPercent}%`, inline: true },
-      {name: "rank", value: `${player.rank} tier ${player.rankDivision}`},
+      { name: '\u200B', value: '\u200B' },
+      {name: "rank", value: `${player.rank} tier ${player.rankDivision}`, inline:true},
     )
     .setTimestamp()
     .setFooter({ text: `brought to you by : EASstats` });

@@ -1,5 +1,6 @@
 class Player {
     constructor(player) {
+        this.allData = player;
         this.name = player.global.name;
         this.level = player.global.level;
         this.leverPercent = player.global.toNextLevelPercent;
