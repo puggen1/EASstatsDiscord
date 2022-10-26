@@ -25,7 +25,6 @@ module.exports = {
     let response = await apiFunctions.getPlayer(username, platform);
     if(response.global === undefined){
       let responseToDisplay = response.Error ? response.Error : response;
-      console.log(responseToDisplay);
       await interaction.reply(`${responseToDisplay}`);
       return;
       
