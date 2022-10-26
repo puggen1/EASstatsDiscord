@@ -36,10 +36,21 @@ async function apiFetch(
       Authorization: authTokenLocal ? authTokenLocal : authToken,
     },
   };
-  let result = await fetch(urlTosend, options).then((response) =>
-    response.json()
-  );
+  try{
+  let result = await fetch(urlTosend, options).then(
+    async (response) => {
+      if(response.ok){
+        return response.json();
+      }
+      else{
+        let parsedError = await response.json();
+        throw new Error(parsedError.Error);
+      }
+    });
   return result;
+}catch(error){
+  return error;
+}
 }
 
 module.exports = {

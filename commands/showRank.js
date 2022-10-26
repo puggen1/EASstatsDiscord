@@ -23,9 +23,19 @@ module.exports = {
     let username = interaction.options.getString("username");
     let platform = interaction.options.getString("platform") ?? "PC";
     let response = await apiFunctions.getPlayer(username, platform);
-    let thisPlayer = new player.Player(response);
-    let createdModal = rankModal.createModal(thisPlayer);
-
-    await interaction.reply({ embeds: [createdModal] });
+    if(response.global === undefined){
+        let responseToDisplay = response.Error ? response.Error : response;
+        console.log(responseToDisplay);
+        await interaction.reply(`${responseToDisplay}`);
+        return;
+        
+      }
+    else{
+        let thisPlayer = new player.Player(response);
+        let createdModal = rankModal.createModal(thisPlayer);
+    
+        await interaction.reply({ embeds: [createdModal] });
+    }
+    
   },
 };
