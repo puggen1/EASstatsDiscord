@@ -1,2 +1,3 @@
 # EASstatsDiscord
+
 discord bot to display apex stats about certain players...

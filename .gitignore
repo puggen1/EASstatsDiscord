@@ -106,3 +106,5 @@ dist
 
 #local enviorment
 .env
+#eslint
+.eslintrc.json

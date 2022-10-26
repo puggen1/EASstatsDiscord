@@ -27,5 +27,5 @@ async function getBoard(legend, platform) {
 }
 module.exports = {
   getPlayer,
-  getBoard
-}
+  getBoard,
+};

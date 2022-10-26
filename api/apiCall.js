@@ -33,7 +33,7 @@ async function apiFetch(
   let options = {
     method: "GET",
     headers: {
-      Authorization: authTokenLocal ? authTokenLocal: authToken,
+      Authorization: authTokenLocal ? authTokenLocal : authToken,
     },
   };
   let result = await fetch(urlTosend, options).then((response) =>
@@ -42,6 +42,6 @@ async function apiFetch(
   return result;
 }
 
-module.exports= {
-  apiFetch
+module.exports = {
+  apiFetch,
 };
