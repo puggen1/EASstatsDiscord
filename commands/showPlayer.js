@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require("discord.js");
+let playerModal = require("../messagecreators/playerModal");
 let apiFunctions = require("../api/apiFunctions");
 module.exports = {
   data: new SlashCommandBuilder()
@@ -14,13 +15,15 @@ module.exports = {
       option
         .setName("platform")
         .setDescription("the platform the player plays on, default is PC")
+        .setRequired(false)
     ),
   async execute(interaction) {
     let username = interaction.options.getString("username");
     let platform = interaction.options.getString("platform") ?? "PC";
     console.log(username, platform);
     let response = await apiFunctions.getPlayer(username, platform);
-    console.log(response);
-    await interaction.reply(`test ${response}`);
+    let createdModal = playerModal.createModal(response);
+
+    await interaction.reply({ embeds: [createdModal] });
   },
 };
