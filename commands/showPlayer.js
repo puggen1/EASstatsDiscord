@@ -1,7 +1,5 @@
 const { SlashCommandBuilder } = require("discord.js");
 let player = require("../player/Player");
-
-let playerModal = require("../messagecreators/playerModal");
 let apiFunctions = require("../api/apiFunctions");
 module.exports = {
   data: new SlashCommandBuilder()
@@ -23,17 +21,14 @@ module.exports = {
     let username = interaction.options.getString("username");
     let platform = interaction.options.getString("platform") ?? "PC";
     let response = await apiFunctions.getPlayer(username, platform);
-    if(response.global === undefined){
+    if (response.global === undefined) {
       let responseToDisplay = response.Error ? response.Error : response;
       await interaction.reply(`${responseToDisplay}`);
       return;
-      
-    }
-    else{
+    } else {
       let thisPlayer = new player.Player(response);
-      let createdModal = playerModal.createModal(thisPlayer);
-      await interaction.reply({ embeds: [createdModal] });  
+      let createdModal = thisPlayer.playerModal();
+      await interaction.reply({ embeds: [createdModal] });
     }
- 
   },
 };

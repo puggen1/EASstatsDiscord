@@ -3,8 +3,8 @@ let player = require("../player/Player");
 let apiFunctions = require("../api/apiFunctions");
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("showrank")
-    .setDescription("gives the current rank of a player")
+    .setName("isonline")
+    .setDescription("check if the player is online")
     .addStringOption((option) =>
       option
         .setName("username")
@@ -26,8 +26,8 @@ module.exports = {
       await interaction.reply(`${responseToDisplay}`);
       return;
     } else {
-      let thisPlayer = new player.Player(response);
-      let createdModal = thisPlayer.rankModal();
+      let status = new player.Player(response);
+      let createdModal = status.onlineModal();
       await interaction.reply({ embeds: [createdModal] });
     }
   },
