@@ -110,7 +110,7 @@ class Player {
    * 
    * @returns discord embed box with information about player rank
    */
-  rankModal() {
+  rankEmbed() {
     let rankEmbed = new EmbedBuilder()
       .setColor(0x0099ff)
       .setTitle(`${this.name}'s rank is:`)
