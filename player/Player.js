@@ -29,7 +29,7 @@ class Player {
   }
   /**
    * 
-   * @returns discord embed box
+   * @returns discord embed box showin if a player is online
    */
   onlineEmbed() {
     let onlineEmbed;
@@ -78,6 +78,10 @@ class Player {
 
     return onlineEmbed;
   }
+  /**
+   * 
+   * @returns discord embed box with information about player
+   */
   playerEmbed() {
     let playerEmbed = new EmbedBuilder()
       .setColor(0x0099ff)
@@ -102,6 +106,10 @@ class Player {
       .setFooter({ text: `brought to you by : EASstats` });
     return playerEmbed;
   }
+  /**
+   * 
+   * @returns discord embed box with information about player rank
+   */
   rankModal() {
     let rankEmbed = new EmbedBuilder()
       .setColor(0x0099ff)
