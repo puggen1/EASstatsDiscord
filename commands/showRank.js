@@ -1,3 +1,6 @@
+/**
+ * @description discord command that gives the rank of a player, or gives error
+ */
 const { SlashCommandBuilder } = require("discord.js");
 let player = require("../player/Player");
 let apiFunctions = require("../api/apiFunctions");
@@ -27,7 +30,7 @@ module.exports = {
       return;
     } else {
       let thisPlayer = new player.Player(response);
-      let createdModal = thisPlayer.rankModal();
+      let createdModal = thisPlayer.rankEmbed();
       await interaction.reply({ embeds: [createdModal] });
     }
   },

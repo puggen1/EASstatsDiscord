@@ -1,3 +1,6 @@
+/**
+ * @description discord test command, will be removed later, but for now it replies with pong! in the chat
+ */
 const { SlashCommandBuilder } = require("discord.js");
 module.exports = {
   data: new SlashCommandBuilder()

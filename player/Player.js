@@ -1,4 +1,10 @@
 let { EmbedBuilder } = require("discord.js");
+/**
+ * @description creates a player with all the information given by api, some of the constructiors are just a shortcut for now
+ * @example ```js
+ * let player = new Player(data);
+ * ```
+ */
 class Player {
   constructor(player) {
     this.allData = player;
@@ -21,10 +27,14 @@ class Player {
         ? player.legends.selected.ImgAssets.banner.replace(" ", "%20")
         : player.legends.selected.ImgAssets.banner;
   }
-  onlineModal() {
-    let onlineModal;
+  /**
+   * 
+   * @returns discord embed box
+   */
+  onlineEmbed() {
+    let onlineEmbed;
     if (this.isOnline) {
-      onlineModal = new EmbedBuilder()
+      onlineEmbed = new EmbedBuilder()
         .setColor(0x0099ff)
         .setTitle(`${this.name} is online`)
         .setDescription(
@@ -59,17 +69,17 @@ class Player {
         .setTimestamp()
         .setFooter({ text: `brought to you by : EASstats` });
     } else {
-      onlineModal = new EmbedBuilder()
+      onlineEmbed = new EmbedBuilder()
         .setColor(0x0099ff)
         .setTitle(`${this.name} is offline`)
         .setTimestamp()
         .setFooter({ text: `brought to you by : EASstats` });
     }
 
-    return onlineModal;
+    return onlineEmbed;
   }
-  playerModal() {
-    let playerModal = new EmbedBuilder()
+  playerEmbed() {
+    let playerEmbed = new EmbedBuilder()
       .setColor(0x0099ff)
       .setTitle(this.name)
       .setDescription(`current legend: ${this.selectedLegend}`)
@@ -90,15 +100,15 @@ class Player {
       )
       .setTimestamp()
       .setFooter({ text: `brought to you by : EASstats` });
-    return playerModal;
+    return playerEmbed;
   }
   rankModal() {
-    let playerModal = new EmbedBuilder()
+    let rankEmbed = new EmbedBuilder()
       .setColor(0x0099ff)
       .setTitle(`${this.name}'s rank is:`)
       .setDescription(`${this.rank} tier: ${this.rankDivision}`)
       .setImage(`${this.rankImg}`);
-    return playerModal;
+    return rankEmbed;
   }
 }
 

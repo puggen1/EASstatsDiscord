@@ -1,3 +1,6 @@
+/**
+ * @description discord command that tells you if a player is online or not.
+ */
 const { SlashCommandBuilder } = require("discord.js");
 let player = require("../player/Player");
 let apiFunctions = require("../api/apiFunctions");
@@ -27,7 +30,7 @@ module.exports = {
       return;
     } else {
       let status = new player.Player(response);
-      let createdModal = status.onlineModal();
+      let createdModal = status.onlineEmbed();
       await interaction.reply({ embeds: [createdModal] });
     }
   },

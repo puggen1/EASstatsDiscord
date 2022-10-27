@@ -1,3 +1,6 @@
+/**
+ * @description a discord command that will show information about a player, or give error if player does not excist
+ */
 const { SlashCommandBuilder } = require("discord.js");
 let player = require("../player/Player");
 let apiFunctions = require("../api/apiFunctions");
@@ -27,7 +30,7 @@ module.exports = {
       return;
     } else {
       let thisPlayer = new player.Player(response);
-      let createdModal = thisPlayer.playerModal();
+      let createdModal = thisPlayer.playerEmbed();
       await interaction.reply({ embeds: [createdModal] });
     }
   },
