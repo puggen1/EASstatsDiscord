@@ -29,7 +29,7 @@ class Player {
   }
   /**
    * 
-   * @returns discord embed box showin if a player is online
+   * @returns discord embed box showing if a player is online
    */
   onlineEmbed() {
     let onlineEmbed;
