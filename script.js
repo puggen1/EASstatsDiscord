@@ -1,6 +1,6 @@
 let apiMethods = require("./api/apiFunctions");
 require("dotenv/config");
-const { Client, Collection, Events, GatewayIntentBits } = require("discord.js");
+const { Client, Collection, Events, GatewayIntentBits, ActivityType  } = require("discord.js");
 const fs = require("node:fs");
 const path = require("node:path");
 let TOKEN = process.env.DISCORD_TOKEN;

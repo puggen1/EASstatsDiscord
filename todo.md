@@ -8,3 +8,5 @@
 - current map
 - leaderboards?
 - improve show player with params?
+
+###   client.user.setActivity('activity', { type: ActivityType.Watching });
