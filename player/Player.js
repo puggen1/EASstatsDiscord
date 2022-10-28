@@ -28,7 +28,7 @@ class Player {
         : player.legends.selected.ImgAssets.banner;
   }
   /**
-   * 
+   *
    * @returns discord embed box showing if a player is online
    */
   onlineEmbed() {
@@ -79,7 +79,7 @@ class Player {
     return onlineEmbed;
   }
   /**
-   * 
+   *
    * @returns discord embed box with information about player
    */
   playerEmbed() {
@@ -95,14 +95,17 @@ class Player {
           value: `${this.leverPercent}%`,
           inline: true,
         },
-        { name: "\u200B", value: "\u200B", inline:true },
+        { name: "\u200B", value: "\u200B", inline: true }
       )
       .setTimestamp()
-      .setFooter({ text: `Rank: ${this.rank} tier ${this.rankDivision}`, iconURL: `${this.rankImg}` });
+      .setFooter({
+        text: `Rank: ${this.rank} tier ${this.rankDivision}`,
+        iconURL: `${this.rankImg}`,
+      });
     return playerEmbed;
   }
   /**
-   * 
+   *
    * @returns discord embed box with information about player rank
    */
   rankEmbed() {
