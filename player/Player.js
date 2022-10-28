@@ -95,15 +95,10 @@ class Player {
           value: `${this.leverPercent}%`,
           inline: true,
         },
-        { name: "\u200B", value: "\u200B" },
-        {
-          name: "rank",
-          value: `${this.rank} tier ${this.rankDivision}`,
-          inline: true,
-        }
+        { name: "\u200B", value: "\u200B", inline:true },
       )
       .setTimestamp()
-      .setFooter({ text: `brought to you by : EASstats` });
+      .setFooter({ text: `Rank: ${this.rank} tier ${this.rankDivision}`, iconURL: `${this.rankImg}` });
     return playerEmbed;
   }
   /**
