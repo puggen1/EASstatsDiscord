@@ -9,4 +9,4 @@
 - leaderboards?
 - improve show player with params?
 
-### client.user.setActivity('activity', { type: ActivityType.Watching });
+- better error code for code 103
