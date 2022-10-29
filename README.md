@@ -5,6 +5,8 @@ with commands for player info, to map rotation and so on.
 
 current version is not considered finished, i will keep updating with more commands and improve excisting features.
 
+
+current version 0.3.3
 ## credit
 
 this discord bot is created with discord.js(https://discord.js.org/#/) and apex legends api (https://apexlegendsapi.com/)
