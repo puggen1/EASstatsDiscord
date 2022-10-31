@@ -36,7 +36,7 @@ class Player {
     if (this.isOnline) {
       onlineEmbed = new EmbedBuilder()
         .setColor(0x0099ff)
-        .setTitle(`${this.name} is online`)
+        .setTitle(`${this.name} is online :white_check_mark:`)
         .setDescription(
           `current legend: ${
             this.selectedLegend === this.realtime.selectedLegend
@@ -66,14 +66,12 @@ class Player {
             ? this.selectedLegendIcon
             : ""
         )
-        .setTimestamp()
-        .setFooter({ text: `brought to you by : EASstats` });
+        .setTimestamp();
     } else {
       onlineEmbed = new EmbedBuilder()
         .setColor(0x0099ff)
-        .setTitle(`${this.name} is offline`)
-        .setTimestamp()
-        .setFooter({ text: `brought to you by : EASstats` });
+        .setTitle(`${this.name} is offline :x:`)
+        .setTimestamp();
     }
 
     return onlineEmbed;
@@ -113,7 +111,8 @@ class Player {
       .setColor(0x0099ff)
       .setTitle(`${this.name}'s rank is:`)
       .setDescription(`${this.rank} tier: ${this.rankDivision}`)
-      .setImage(`${this.rankImg}`);
+      .setImage(`${this.rankImg}`)
+      .setTimestamp();
     return rankEmbed;
   }
 }
