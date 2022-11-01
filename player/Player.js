@@ -14,7 +14,7 @@ class Player {
     this.leverPercent = player.global.toNextLevelPercent;
     this.rank = player.global.rank.rankName;
     this.rankImg = player.global.rank.rankImg;
-    this.rankDivision = player.global.rank.rankDiv;
+    this.rankDivision = player.global.rank.rankDiv = 0 ? "": player.global.rank.rankDiv;
     this.selectedLegend = player.legends.selected.LegendName;
     this.isOnline = player.realtime.isOnline;
     this.selectedLegendIcon = player.legends.selected.ImgAssets.icon.includes(
@@ -81,6 +81,10 @@ class Player {
    * @returns discord embed box with information about player
    */
   playerEmbed() {
+    let division = "";
+    if(this.rankDivision){
+      division = `tier ${this.rankDivision}`;
+    }
     let playerEmbed = new EmbedBuilder()
       .setColor(0x0099ff)
       .setTitle(this.name)
@@ -97,7 +101,7 @@ class Player {
       )
       .setTimestamp()
       .setFooter({
-        text: `Rank: ${this.rank} tier ${this.rankDivision}`,
+        text: `Rank: ${this.rank} ${division}`,
         iconURL: `${this.rankImg}`,
       });
     return playerEmbed;
@@ -107,10 +111,14 @@ class Player {
    * @returns discord embed box with information about player rank
    */
   rankEmbed() {
+    let division = "";
+    if(this.rankDivision){
+      division = `tier ${this.rankDivision}`;
+    }
     let rankEmbed = new EmbedBuilder()
       .setColor(0x0099ff)
       .setTitle(`${this.name}'s rank is:`)
-      .setDescription(`${this.rank} tier: ${this.rankDivision}`)
+      .setDescription(`${this.rank} ${division}`)
       .setImage(`${this.rankImg}`)
       .setTimestamp();
     return rankEmbed;
