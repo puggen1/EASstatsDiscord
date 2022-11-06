@@ -23,9 +23,15 @@ async function getPlayer(username, platform) {
  */
 async function getBoard(legend, platform) {
   let board = await apiCall.apiFetch("board", "", platform, legend);
-  console.log(board);
+  return board;
+}
+
+async function getMap() {
+  let map = await apiCall.apiFetch("map");
+  return map;
 }
 module.exports = {
   getPlayer,
   getBoard,
+  getMap,
 };

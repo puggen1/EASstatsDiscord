@@ -29,6 +29,8 @@ async function apiFetch(
     urlTosend += "bridge?" + `player=${player}&platform=${platform}`;
   } else if (type === "board") {
     urlTosend += "leaderboard?" + `legend=${legend}&platform=${platform}`;
+  } else if (type === "map") {
+    urlTosend += "maprotation";
   }
   let options = {
     method: "GET",
